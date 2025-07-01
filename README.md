@@ -115,6 +115,40 @@ python app.py
 * Open in browser: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 * After login, go directly to your dashboard: [http://127.0.0.1:5000/dashboard](http://127.0.0.1:5000/dashboard)
 
+
 ---
+
+### 🔐 **Admin Login**
+
+To access the admin dashboard:
+
+* Use the following admin credentials during registration or manually insert into the DB:
+
+```bash
+Email: admin@example.com
+Password: your_password
+```
+
+> ⚠️ Make sure this user exists in your `users` table with the correct email (`admin@example.com`), as admin access is **checked via email**.
+
+---
+
+### 📊 Access Admin Dashboard
+
+Once logged in as admin, go to:
+
+```
+http://127.0.0.1:5000/admin/dashboard
+```
+
+From there, the admin can:
+
+* View all booked appointments
+* Update appointment statuses
+* Add/Delete battery swap stations
+
+---
+
+
 
 
