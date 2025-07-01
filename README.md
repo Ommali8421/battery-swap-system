@@ -1,8 +1,5 @@
 
 
----
-
-```markdown
 # 🔋 Battery Swap Appointment Booking System
 
 A modern and user-friendly web application for booking electric vehicle battery swaps.  
