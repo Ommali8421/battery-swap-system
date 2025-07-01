@@ -1,4 +1,8 @@
 
+
+---
+
+```markdown
 # 🔋 Battery Swap Appointment Booking System
 
 A modern and user-friendly web application for booking electric vehicle battery swaps.  
@@ -28,6 +32,7 @@ Built using **Flask**, **MySQL**, and **Tailwind CSS**.
 
 ## 📂 Project Structure
 
+```
 
 battery-swap-system/
 │
@@ -58,6 +63,7 @@ battery-swap-system/
 ├── css/styles.css
 └── js/scripts.js
 
+````
 
 ---
 
@@ -107,3 +113,9 @@ DB_PORT=3306
 
 ```bash
 python app.py
+```
+
+---
+
+
+```
