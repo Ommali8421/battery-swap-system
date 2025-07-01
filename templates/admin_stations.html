@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow">
+    <h2 class="text-2xl font-bold mb-4">⚡ Manage Stations</h2>
+
+    <!-- Form to Add Station -->
+    <form method="POST" class="mb-6 space-y-4">
+        <div>
+            <label class="block font-medium mb-1">Station Name</label>
+            <input type="text" name="name" required class="w-full border px-3 py-2 rounded" placeholder="e.g. Baner charging station">
+        </div>
+        <div>
+            <label class="block font-medium mb-1">Location</label>
+            <input type="text" name="location" required class="w-full border px-3 py-2 rounded" placeholder="e.g. Pune, MH">
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            ➕ Add Station
+        </button>
+    </form>
+
+    <!-- Existing Stations -->
+    <h3 class="text-lg font-semibold mb-2">📍 Current Stations</h3>
+    <ul class="space-y-2">
+        {% for station in stations %}
+            <li class="flex justify-between items-center bg-gray-100 p-3 rounded">
+                <div>
+                    <strong>{{ station[1] }}</strong> — {{ station[2] }}
+                </div>
+                <form method="POST" action="{{ url_for('admin.delete_station', station_id=station[0]) }}">
+                    <button type="submit" class="text-red-600 hover:underline">🗑 Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

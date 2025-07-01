@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-6">🛠 Admin – All Appointments</h2>
+
+    {% if appointments %}
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-xl shadow text-sm">
+                <thead class="bg-blue-600 text-white text-left">
+                    <tr>
+                        <th class="px-4 py-2">#</th>
+                        <th class="px-4 py-2">👤 User</th>
+                        <th class="px-4 py-2">📍 Station</th>
+                        <th class="px-4 py-2">🗓️ Date & Time</th>
+                        <th class="px-4 py-2">📌 Status</th>
+                        <th class="px-4 py-2">🔄 Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in appointments %}
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-4 py-2">{{ a[0] }}</td> <!-- ID -->
+                        <td class="px-4 py-2 font-semibold">{{ a[1] }}</td> <!-- Username -->
+                        <td class="px-4 py-2">{{ a[2] }}</td> <!-- Station Name -->
+                        <td class="px-4 py-2">{{ a[3] }}</td> <!-- Appointment Time -->
+                        <td class="px-4 py-2 capitalize">{{ a[4] }}</td> <!-- Status -->
+
+                        <!-- ✅ Status Update Form -->
+                        <td class="px-4 py-2">
+                            <form method="POST" action="{{ url_for('admin.update_status', appointment_id=a[0]) }}">
+                                <div class="flex items-center space-x-2">
+                                    <select name="status" class="border px-2 py-1 rounded text-sm">
+                                        <option value="pending" {% if a[4] == 'pending' %}selected{% endif %}>Pending</option>
+                                        <option value="completed" {% if a[4] == 'completed' %}selected{% endif %}>Completed</option>
+                                        <option value="cancelled" {% if a[4] == 'cancelled' %}selected{% endif %}>Cancelled</option>
+                                    </select>
+                                    <button type="submit" class="bg-blue-600 text-white text-sm px-3 py-1 rounded hover:bg-blue-700">
+                                        Update
+                                    </button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-gray-600">No appointments found.</p>
+    {% endif %}
+</div>
+{% endblock %}
