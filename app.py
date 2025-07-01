@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask_mysqldb import MySQL
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from dotenv import load_dotenv
 import os
 
@@ -51,6 +51,13 @@ def load_user(user_id):
     if user_data:
         return User(user_data)
     return None
+
+# 🏠 Redirect root URL
+@app.route('/')
+def home():
+    if current_user.is_authenticated:
+        return redirect(url_for('user.dashboard'))
+    return redirect(url_for('auth.login'))
 
 # 🧪 Optional Test Route
 @app.route('/test-db')
