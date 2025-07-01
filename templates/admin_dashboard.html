@@ -24,9 +24,7 @@
                         <td class="px-4 py-2 font-semibold">{{ a[1] }}</td> <!-- Username -->
                         <td class="px-4 py-2">{{ a[2] }}</td> <!-- Station Name -->
                         <td class="px-4 py-2">{{ a[3] }}</td> <!-- Appointment Time -->
-                        <td class="px-4 py-2 capitalize">{{ a[4] }}</td> <!-- Status -->
-
-                        <!-- ✅ Status Update Form -->
+                        <td class="px-4 py-2 capitalize">{{ a[4] }}</td> <!-- Status -->                        
                         <td class="px-4 py-2">
                             <form method="POST" action="{{ url_for('admin.update_status', appointment_id=a[0]) }}">
                                 <div class="flex items-center space-x-2">

@@ -5,7 +5,7 @@ from models.user import User
 
 auth_bp = Blueprint('auth', __name__)
 
-# 🔐 Login Route
+# Login Route
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -20,13 +20,13 @@ def login():
         if user_data and check_password_hash(user_data[3], password):
             user = User(user_data)
             login_user(user)
-            return redirect(url_for('user.dashboard'))  # or redirect to admin.dashboard if admin
+            return redirect(url_for('user.dashboard'))  
         else:
             flash("Invalid email or password", "danger")
 
     return render_template('login.html')
 
-# 📝 Register Route
+# Register Route
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -46,7 +46,7 @@ def register():
 
     return render_template('register.html')
 
-# 🚪 Logout Route
+# Logout Route
 @auth_bp.route('/logout')
 @login_required
 def logout():

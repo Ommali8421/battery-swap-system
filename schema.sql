@@ -1,6 +1,6 @@
 CREATE DATABASE battery_swap;
 USE battery_swap;
--- 👤 Users Table
+-- Users Table
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -10,7 +10,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 🏙️ Stations Table
+-- Stations Table
 CREATE TABLE stations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE stations (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- 📅 Appointments Table
+-- Appointments Table
 CREATE TABLE appointments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,

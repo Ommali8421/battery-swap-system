@@ -44,7 +44,7 @@ def delete_station(station_id):
     flash("Station deleted!", "success")
     return redirect(url_for('admin.manage_stations'))
 
-#  Admin Dashboard – View All Appointments
+#  Admin Dashboard 
 @admin_bp.route('/admin/dashboard')
 @login_required
 def admin_dashboard():
@@ -69,7 +69,7 @@ def admin_dashboard():
 
     return render_template('admin_dashboard.html', appointments=appointments)
 
-# 🔄 Admin – Update Appointment Status
+#  Admin – Update Appointment Status
 @admin_bp.route('/admin/update-status/<int:appointment_id>', methods=['POST'])
 @login_required
 def update_status(appointment_id):
