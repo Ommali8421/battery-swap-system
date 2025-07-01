@@ -1,5 +1,3 @@
-
-
 # 🔋 Battery Swap Appointment Booking System
 
 A modern and user-friendly web application for booking electric vehicle battery swaps.  
@@ -111,6 +109,11 @@ DB_PORT=3306
 ```bash
 python app.py
 ```
+
+8. **Access the App**
+
+* Open in browser: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+* After login, go directly to your dashboard: [http://127.0.0.1:5000/dashboard](http://127.0.0.1:5000/dashboard)
 
 ---
 
