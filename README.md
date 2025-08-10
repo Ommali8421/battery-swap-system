@@ -1,34 +1,33 @@
 # 🔋 Battery Swap Appointment Booking System
 
-A modern and user-friendly web application for booking electric vehicle battery swaps.  
+A modern and user-friendly web application for booking electric vehicle battery swaps.
 Built using **Flask**, **MySQL**, and **Tailwind CSS**.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 User Registration & Login  
-- 📅 Book Appointments at Charging Stations  
-- 📋 User Dashboard to Track Appointments  
-- ⚙️ Admin Panel to Manage Stations & Bookings  
-- ✅ Appointment Status Update (Pending / Completed / Cancelled)
+* 🔐 User Registration & Login
+* 📅 Book Appointments at Charging Stations
+* 📋 User Dashboard to Track Appointments
+* ⚙️ Admin Panel to Manage Stations & Bookings
+* ✅ Appointment Status Update (Pending / Completed / Cancelled)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Flask (Python), Flask-Login  
-- **Database**: MySQL  
-- **Frontend**: HTML, Jinja2, Tailwind CSS  
-- **Environment Management**: dotenv  
-- **Version Control**: Git + GitHub
+* **Backend**: Flask (Python), Flask-Login
+* **Database**: MySQL
+* **Frontend**: HTML, Jinja2, Tailwind CSS
+* **Environment Management**: dotenv
+* **Version Control**: Git + GitHub
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 battery-swap-system/
 │
 ├── app.py                      # Main Flask application
@@ -40,10 +39,10 @@ battery-swap-system/
 │   └── user.py                 # User class for Flask-Login
 │
 ├── routes/
-│   ├── auth\_routes.py          # Login/Register/Logout
-│   ├── user\_routes.py          # Dashboard route
-│   ├── appointment\_routes.py   # Appointment booking
-│   └── admin\_routes.py         # Admin dashboard & station mgmt
+│   ├── auth_routes.py          # Login/Register/Logout
+│   ├── user_routes.py          # Dashboard route
+│   ├── appointment_routes.py   # Appointment booking
+│   └── admin_routes.py         # Admin dashboard & station mgmt
 │
 ├── templates/
 │   ├── base.html
@@ -51,23 +50,23 @@ battery-swap-system/
 │   ├── register.html
 │   ├── dashboard.html
 │   ├── book.html
-│   ├── admin\_dashboard.html
-│   └── admin\_stations.html
+│   ├── admin_dashboard.html
+│   └── admin_stations.html
 │
 └── static/
-├── css/styles.css
-└── js/scripts.js
-
-````
+    ├── css/styles.css
+    └── js/scripts.js
+```
 
 ---
 
 ## 💻 How to Run Locally
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/Ommali8421/battery-swap-system.git
-````
+```
 
 2. **Navigate to the project folder**
 
@@ -115,39 +114,15 @@ python app.py
 * Open in browser: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 * After login, go directly to your dashboard: [http://127.0.0.1:5000/dashboard](http://127.0.0.1:5000/dashboard)
 
+---
+
+## 🔑 Admin Login
+
+**Username:** `admin`
+**Password:** `Ommali@123`
 
 ---
 
-### 🔐 **Admin Login**
-
-To access the admin dashboard:
-
-* Use the following admin credentials during registration or manually insert into the DB:
-
-```bash
-Email: admin@example.com
-Password: your_password
-```
-
-> ⚠️ Make sure this user exists in your `users` table with the correct email (`admin@example.com`), as admin access is **checked via email**.
-
----
-
-### 📊 Access Admin Dashboard
-
-Once logged in as admin, go to:
-
-```
-http://127.0.0.1:5000/admin/dashboard
-```
-
-From there, the admin can:
-
-* View all booked appointments
-* Update appointment statuses
-* Add/Delete battery swap stations
-
----
 
 
 
