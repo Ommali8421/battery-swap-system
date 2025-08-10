@@ -118,7 +118,7 @@ python app.py
 
 ## 🔑 Admin Login
 
-**Username:** `admin`
+**Email:** `admin@example.com`
 **Password:** `Ommali@123`
 
 ---
